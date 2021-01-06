@@ -22,6 +22,14 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('carga', function(){
+    return view('carga');
+})->name('carga');
+
+Route::get('graficos', function () {
+    return "graficos";
+})->name('graficos');
+
 Route::get('hoteles', function () {
     return "pipo";
 });
