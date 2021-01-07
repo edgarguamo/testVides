@@ -46,5 +46,31 @@
             </form>
         </article>
     </section>
-    
+    <div class="row">
+        <div class"col-md-12">
+        <br>
+            <h3 align="center">Hotel</h3>
+            <br>
+            <table class="table table-bordered">
+                <tr>
+                    <td>idEstablecimiento</td>
+                    <td>nombres</td>
+                    <td>categoria</td>
+                    <td>numHabitaciones</td>
+                    <td>plazas</td>
+                    <td>empTemp</td>
+                </tr>
+                 @foreach($datos as $data)
+                    <tr>    
+                        <td>{{$data['idEstablecimiento']}}</td>
+                        <td>{{$data['nombres']}}</td>
+                        <td>{{$data['categoria']}}</td>
+                        <td>{{$data['numHabitaciones']}}</td>
+                        <td>{{$data['plazas']}}</td>
+                        <td>{{$data['empTemp']}}</td>                  
+                    </tr>
+                @endforeach
+            </table>
+        </div>
+    </div>
 </x-app-layout>
