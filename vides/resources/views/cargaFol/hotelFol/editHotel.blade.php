@@ -2,12 +2,12 @@
     
 @section('contenido')
 
-<form action="/hotelFol/tablaHotel/{{ $hotel->idEstablecimiento}}" method="POST">
+<form action="/hotelFol/tablaHotel/{{ $hotel->id}}" method="POST">
     @csrf
     @method('PUT')
     <div class="mb-3">
         <label for="" class="form-label">Id del Establecimiento</label>
-        <input id="idestab" name="idestab" type="text" class="form-control" value="{{ $hotel->idEstablecimiento}}" tabindex="1">
+        <input id="idestab" name="idestab" type="text" class="form-control" value="{{ $hotel->id}}" tabindex="1">
     </div>
     <div class="mb-3">
         <label for="" class="form-label">Nombre del establecimiento</label>

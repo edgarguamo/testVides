@@ -25,7 +25,7 @@ class ExcelImportHotel implements ToCollection, WithMultipleSheets, WithCalculat
         foreach($collection as $key=>$value){
             
             if($key==31){
-                DB::table('hotel')->insert(['idEstablecimiento' => $value[0], 'nombres' => $value[0], 'categoria' => 
+                DB::table('hotel')->insert(['nombres' => $value[0], 'categoria' => 
                 $value[2], 'numHabitaciones' => $value[3], 'plazas' => $value[4], 'empTemp' => $value[19]]); 
             }
         }

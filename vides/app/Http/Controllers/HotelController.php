@@ -38,7 +38,7 @@ class HotelController extends Controller
     public function store(Request $request)
     {
         $hoteles = new Hotel();
-        $hoteles->idEstablecimiento = $request->get('idestab');
+        $hoteles->id = $request->get('idestab');
         $hoteles->nombres = $request->get('nomestab');
         $hoteles->categoria = $request->get('categoria');
         $hoteles->numHabitaciones = $request->get('nhab');
@@ -69,7 +69,7 @@ class HotelController extends Controller
      */
     public function edit($id)
     {
-        $hotel = Hotel::where('hotel.idEstablecimiento', $id)->first();
+        $hotel = Hotel::find($id);
         return view('cargaFol.hotelFol.editHotel', compact('hotel'));
     }
 
@@ -82,8 +82,8 @@ class HotelController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $hotel = Hotel::where('hotel.idEstablecimiento', $id)->first();
-        $hotel->idEstablecimiento = $request->get('idestab');
+        $hotel = Hotel::find($id);
+        $hotel->id = $request->get('idestab');
         $hotel->nombres = $request->get('nomestab');
         $hotel->categoria = $request->get('categoria');
         $hotel->numHabitaciones = $request->get('nhab');
@@ -103,7 +103,7 @@ class HotelController extends Controller
      */
     public function destroy($id)
     {
-        $hotel = Hotel::where('hotel.idEstablecimiento', $id)->first();
+        $hotel = Hotel::find($id);
 
         $hotel->delete();
 

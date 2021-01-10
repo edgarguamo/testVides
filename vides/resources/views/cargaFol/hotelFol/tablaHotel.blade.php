@@ -12,7 +12,7 @@
     <table id="hoteles" align="center" class="table table-bordered table-striped" style="width:100%">
         <thead class="bg-primary text-white">
         <tr>
-            <th scope="col">idEstablecimiento</th>
+            <th scope="col">id</th>
             <th scope="col">nombres</th>
             <th scope="col">categoria</th>
             <th scope="col">numHabitaciones</th>
@@ -24,15 +24,15 @@
         <tbody>
         @foreach ($hoteles as $hotel)
             <tr>    
-                <td>{{$hotel['idEstablecimiento']}}</td>
+                <td>{{$hotel['id']}}</td>
                 <td>{{$hotel['nombres']}}</td>
                 <td>{{$hotel['categoria']}}</td>
                 <td>{{$hotel['numHabitaciones']}}</td>
                 <td>{{$hotel['plazas']}}</td>
                 <td>{{$hotel['empTemp']}}</td>    
                 <td>
-                    <form action="{{ route('tablaHotel.destroy', $hotel->idEstablecimiento)}}" method="POST">
-                    <a href="/hotelFol/tablaHotel/{{ $hotel->idEstablecimiento}}/edit" class="btn btn-info">Editar</a>
+                    <form action="{{ route('tablaHotel.destroy', $hotel->id)}}" method="POST">
+                    <a href="/hotelFol/tablaHotel/{{ $hotel->id}}/edit" class="btn btn-info">Editar</a>
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-info">Eliminar</button>
@@ -42,6 +42,7 @@
         @endforeach
         </tbody>
     </table>
+    <a href="/carga" class="btn btn-primary">Atras</a>
     @section('js')
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>

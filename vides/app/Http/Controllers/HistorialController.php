@@ -38,7 +38,7 @@ class HistorialController extends Controller
     public function store(Request $request)
     {
         $historiales = new Historial();
-        $historiales->idHEstadia = $request->get('idhesta');
+        $historiales->id = $request->get('idhesta');
         $historiales->idEstablecimiento = $request->get('idestab');
         $historiales->fecha = $request->get('fecha');
         $historiales->checkIn = $request->get('checkIn');
@@ -74,7 +74,7 @@ class HistorialController extends Controller
      */
     public function edit($id)
     {
-        $historial = Historial::where('historialestadia.idHEstadia', $id)->first();
+        $historial = Historial::find($id);
         return view('cargaFol.historialFol.editHistorial', compact('historial'));
     }
 
@@ -87,8 +87,8 @@ class HistorialController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $historial = new Historial();
-        $historial->idHEstadia = $request->get('idhesta');
+        $historial = Historial::find($id);
+        $historial->id = $request->get('idhesta');
         $historial->idEstablecimiento = $request->get('idestab');
         $historial->fecha = $request->get('fecha');
         $historial->checkIn = $request->get('checkIn');
@@ -113,7 +113,7 @@ class HistorialController extends Controller
      */
     public function destroy($id)
     {
-        $historial = Historial::where('historialestadia.idHEstadia', $id)->first();
+        $historial = Historial::find($id);
 
         $historial->delete();
 

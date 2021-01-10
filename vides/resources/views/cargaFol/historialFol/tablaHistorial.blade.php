@@ -12,7 +12,7 @@
     <table id="historiales" class="table table-bordered table-striped" style="width:100%">
         <thead class="bg-primary text-white">
         <tr>
-            <th scope="col">idHEstadia</th>
+            <th scope="col">id</th>
             <th scope="col">idEstablecimiento</th>
             <th scope="col">Fecha</th>
             <th scope="col">checkIn</th>
@@ -29,7 +29,7 @@
         <tbody>
         @foreach ($historiales as $historial)
             <tr>  
-                <td>{{$historial['idHEstadia']}}</td>  
+                <td>{{$historial['id']}}</td>  
                 <td>{{$historial['idEstablecimiento']}}</td>
                 <td>{{$historial['fecha']}}</td>
                 <td>{{$historial['checkIn']}}</td>
@@ -41,8 +41,8 @@
                 <td>{{$historial['promTarifa']}}</td>
                 <td>{{$historial['tarPer']}}</td> 
                 <td>
-                <form action="{{ route('tablaHistorial.destroy', $historial->idHEstadia)}}" method="POST">
-                    <a href="/historialFol/tablaHistorial/{{ $historial->idHEstadia}}/edit" class="btn btn-info">Editar</a>
+                <form action="{{ route('tablaHistorial.destroy', $historial->id)}}" method="POST">
+                    <a href="/historialFol/tablaHistorial/{{ $historial->id}}/edit" class="btn btn-info">Editar</a>
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-info">Eliminar</button>
@@ -52,6 +52,7 @@
         @endforeach
         </tbody>
     </table>
+    <a href="/carga" class="btn btn-primary">Atras</a>
     @section('js')
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>

@@ -35,12 +35,12 @@ class ExcelImportCliente implements ToCollection, WithMultipleSheets, WithCalcul
         foreach($collection as $key=>$value){
             if($value[5]!=null && $value[1]!=null && $value[0]!=null){
                 if($key!=0){  
-                    DB::table('cliente')->insert(['idCliente' => sprintf("%s%s%s", substr($value[0], 0, 3), 'NAC', $value[5]),
-                    'idHEstadia' => sprintf("%s%s", substr($value[0], 0, 3), $value[5]), 'tipoCliente' => 'Nacional', 
-                    'numCLientes' => $value[9]]);
-                    DB::table('cliente')->insert(['idCliente' => sprintf("%s%s%s", substr($value[0], 0, 3), 'EXT', $value[5]),
-                    'idHEstadia' => sprintf("%s%s", substr($value[0], 0, 3), $value[5]), 'tipoCliente' => 'Extranjero', 
-                    'numCLientes' => $value[10]]); 
+                    DB::table('cliente')->insert([
+                        'idHEstadia' => DB::table('historialestadia')->select('id')->where('fecha', '=', $value[5])->first()->id,
+                        'tipoCliente' => 'Nacional', 'numCLientes' => $value[9]]);
+                    DB::table('cliente')->insert([
+                        'idHEstadia' => DB::table('historialestadia')->select('id')->where('fecha', '=', $value[5])->first()->id,
+                        'tipoCliente' => 'Extranjero', 'numCLientes' => $value[10]]); 
                 }
             }
             

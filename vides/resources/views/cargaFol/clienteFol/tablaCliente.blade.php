@@ -12,7 +12,7 @@
     <table id="clientes" class="table table-bordered table-striped" style="width:100%">
         <thead class="bg-primary text-white">
         <tr>
-            <th scope="col">idCliente</th>
+            <th scope="col">id</th>
             <th scope="col">idHEstadia</th>
             <th scope="col">tipoCliente</th>
             <th scope="col">numClientes</th>
@@ -22,13 +22,13 @@
         <tbody>
         @foreach ($clientes as $cliente)
             <tr>  
-                <td>{{$cliente['idCliente']}}</td>  
+                <td>{{$cliente['id']}}</td>  
                 <td>{{$cliente['idHEstadia']}}</td>
                 <td>{{$cliente['tipoCliente']}}</td>
                 <td>{{$cliente['numClientes']}}</td>
                 <td>
-                <form action="{{ route('tablaCliente.destroy', $cliente->idCliente)}}" method="POST">
-                    <a href="/clienteFol/tablaCliente/{{ $cliente->idCliente}}/edit" class="btn btn-info">Editar</a>
+                <form action="{{ route('tablaCliente.destroy', $cliente->id)}}" method="POST">
+                    <a href="/clienteFol/tablaCliente/{{ $cliente->id}}/edit" class="btn btn-info">Editar</a>
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-info">Eliminar</button>
@@ -38,6 +38,7 @@
         @endforeach
         </tbody>
     </table>
+    <a href="/carga" class="btn btn-primary">Atras</a>
     @section('js')
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>

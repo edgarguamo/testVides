@@ -2,12 +2,12 @@
     
 @section('contenido')
 
-<form action="/historialFol/tablaHistorial/{{ $historial->idHEstadia}}" method="POST">
+<form action="/historialFol/tablaHistorial/{{ $historial->id}}" method="POST">
     @csrf
     @method('PUT')
     <div class="mb-3">
         <label for="" class="form-label">Id historial estadia</label>
-        <input id="idhesta" name="idhesta" type="text" class="form-control" value="{{ $historial->idHEstadia}}" tabindex="1">
+        <input id="idhesta" name="idhesta" type="text" class="form-control" value="{{ $historial->id}}" tabindex="1">
     </div>
     <div class="mb-3">
         <label for="" class="form-label">Id del Establecimiento</label>

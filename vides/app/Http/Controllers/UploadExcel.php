@@ -14,20 +14,20 @@ class UploadExcel extends Controller
         $file =  $request->file;
 
         Excel::import(new ExcelImportHotel, $file);
-        echo "Inserted succesfully";
+        return redirect('/carga');
     }
 
     function excelHistorial(Request $request){
         $file =  $request->file;
 
         Excel::import(new ExcelImportHistorial, $file);
-        echo "Inserted succesfully";
+        return redirect('/carga');
     }
 
     function excelCliente(Request $request){
         $file =  $request->file;
 
         Excel::import(new ExcelImportCliente, $file);
-        echo "Inserted succesfully";
+        return redirect('/carga');
     }
 }

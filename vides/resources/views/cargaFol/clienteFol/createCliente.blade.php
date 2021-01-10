@@ -2,7 +2,7 @@
     
 @section('contenido')
 
-<form action="/historialFol/tablaHistorial" method="POST">
+<form action="/clienteFol/tablaCliente" method="POST">
     @csrf
     <div class="mb-3">
         <label for="" class="form-label">Id Cliente</label>

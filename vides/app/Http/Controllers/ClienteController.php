@@ -37,8 +37,8 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        $clientees = new Cliente();
-        $clientes->idCliente = $request->get('idcliente');
+        $clientes = new Cliente();
+        $clientes->id = $request->get('idCliente');
         $clientes->idHEstadia = $request->get('idhesta');
         $clientes->tipoCliente = $request->get('tipoCliente');
         $clientes->numClientes = $request->get('numClientes');
@@ -67,7 +67,7 @@ class ClienteController extends Controller
      */
     public function edit($id)
     {
-        $cliente = Cliente::where('cliente.idCliente', $id)->first();
+        $cliente = Cliente::find($id);
         return view('cargaFol.clienteFol.editCliente', compact('cliente'));
     }
 
@@ -80,11 +80,11 @@ class ClienteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $cliente = Cliente::where('cliente.idCliente', $id)->first();
-        $clientes->idCliente = $request->get('idCliente');
-        $clientes->idHEstadia = $request->get('idhesta');
-        $clientes->tipoCliente = $request->get('tipoCliente');
-        $clientes->numClientes = $request->get('numClientes');
+        $cliente = Cliente::find($id);
+        $cliente->id = $request->get('idCliente');
+        $cliente->idHEstadia = $request->get('idhesta');
+        $cliente->tipoCliente = $request->get('tipoCliente');
+        $cliente->numClientes = $request->get('numClientes');
 
         $cliente->save();
 
@@ -99,7 +99,7 @@ class ClienteController extends Controller
      */
     public function destroy($id)
     {
-        $cliente = Cliente::where('cliente.idCliente', $id)->first();
+        $cliente = Cliente::find($id);
 
         $cliente->delete();
 
