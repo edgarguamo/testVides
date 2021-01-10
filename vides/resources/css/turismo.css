@@ -1,0 +1,33 @@
+:root{
+    --white: #ffffff;
+    --black: #212121;
+    --primary:#3C6479;
+    --secundary: #FEDED7;
+    --terciary: #F0C7C3;
+
+}
+
+body{
+    background-color: var(--primary);
+    font-family: 'Krub',sans-serif;
+}
+section.busquedalugar{
+    background-color: rgb(255, 255, 255);
+    width: 95%;
+    margin-left: 2em;
+    margin-right: 2em;
+    color: rgb(0, 0, 0);
+}
+section.busquedalugar div.textodebusqueda{
+    text-align: center;
+}
+section.busquedalugar div.grfcs{
+    display: inline-table;
+    text-align: center;
+    margin-top: 5em;
+    margin-left: 7.3em;
+}
+section.busquedalugar div.grfcs img{
+    width: 250px;
+    height: 215px;
+}
