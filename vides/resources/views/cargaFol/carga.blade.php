@@ -16,6 +16,7 @@
                     <input type='file' name="file" class="hidden" />
                 </label>
                 <button class="bg-transparent hover:bg-grey text-grey-dark font-semibold hover:text-green-600 py-2 px-4 border border-grey hover:border-green-600 rounded mr-2" type="submit">Hotel</button>
+                <br><a href="/hotelFol/tablaHotel" >Contenido de hoteles</a>
             </form>
         </article>
         <article>
@@ -29,6 +30,7 @@
                     <input type='file' name="file" class="hidden" />
                 </label>
                 <button class="bg-transparent hover:bg-grey text-grey-dark font-semibold hover:text-green-600 py-2 px-4 border border-grey hover:border-green-600 rounded mr-2" type="submit">Historial</button>
+                <br><a href="/historialFol/tablaHistorial" >Contenido de historiales</a>
             </form>
         </article>
         <br><br><br><br>
@@ -43,34 +45,10 @@
                     <input type='file' name="file" class="hidden" />
                 </label>
                 <button class="bg-transparent hover:bg-grey text-grey-dark font-semibold hover:text-green-600 py-2 px-4 border border-grey hover:border-green-600 rounded mr-2" type="submit">Cliente</button>
+                <br><a href="/clienteFol/tablaCliente" >Contenido de clientes</a>
             </form>
         </article>
-    </section>
-    <div class="row">
-        <div class"col-md-12">
         <br>
-            <h3 align="center">Hotel</h3>
-            <br>
-            <table class="table table-bordered">
-                <tr>
-                    <td>idEstablecimiento</td>
-                    <td>nombres</td>
-                    <td>categoria</td>
-                    <td>numHabitaciones</td>
-                    <td>plazas</td>
-                    <td>empTemp</td>
-                </tr>
-                 @foreach($datos as $data)
-                    <tr>    
-                        <td>{{$data['idEstablecimiento']}}</td>
-                        <td>{{$data['nombres']}}</td>
-                        <td>{{$data['categoria']}}</td>
-                        <td>{{$data['numHabitaciones']}}</td>
-                        <td>{{$data['plazas']}}</td>
-                        <td>{{$data['empTemp']}}</td>                  
-                    </tr>
-                @endforeach
-            </table>
-        </div>
-    </div>
+        
+    </section>  
 </x-app-layout>

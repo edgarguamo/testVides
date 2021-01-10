@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MostrarDatos;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +11,12 @@ use App\Http\Controllers\MostrarDatos;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('carga', [MostrarDatos::class,'show']);
+
+Route::resource('/hotelFol/tablaHotel', 'App\Http\Controllers\HotelController');
+
+Route::resource('/historialFol/tablaHistorial', 'App\Http\Controllers\HistorialController');
+
+Route::resource('/clienteFol/tablaCliente', 'App\Http\Controllers\ClienteController');
 
 Route::post('excelHotel', 'App\Http\Controllers\UploadExcel@excelHotel')->name('excelHotel');
 
@@ -25,7 +29,7 @@ Route::get('/', function () {
 });
 
 Route::get('carga', function(){
-    return view('carga');
+    return view('cargaFol.carga');
 })->name('carga');
 
 Route::get('graficos', function () {
