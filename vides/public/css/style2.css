@@ -1,0 +1,12 @@
+.wallpaper{
+    background-image: url("/public/img/collage/collage5.jpg");
+}
+
+.wallpaper2{
+    background-image: url('https://www.nanmagazine.com/wp-content/uploads/2018/12/feat_33_a02.jpg');
+    opacity: 80;
+}
+
+.divsionHotel{
+    clip-path:polygon(10% 0, 100% 0%, 100% 100%, 0 100%)
+}

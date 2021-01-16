@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -37,7 +38,7 @@ Route::get('graficos', function () {
 })->name('graficos');
 
 Route::get('hoteles', function () {
-    return "pipo";
+    return view('welcome'); 
 });
 
 Route::get('turismo', function () {
@@ -52,6 +53,16 @@ Route::get('error', function () {
     return "plantilla de erro";
 });
 
+
+Route::get('camino', function () {
+    return "plantilla de erro";
+});
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::get('/dashboard/listUser', [UserController::class,'index'])->name('dashboard.listUser');
+
+Route::post('/dashboard/',[UserController::class,'forms'])->name('dashboard.createUser');
+

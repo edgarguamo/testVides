@@ -25,6 +25,8 @@ class CreateNewUser implements CreatesNewUsers
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => $this->passwordRules(),
+            'rol' =>['required', 'string', 'max:20'],
+            'enterprise'=>['required', 'string', 'max:50'],
         ])->validate();
 
         return DB::transaction(function () use ($input) {
@@ -32,6 +34,8 @@ class CreateNewUser implements CreatesNewUsers
                 'name' => $input['name'],
                 'email' => $input['email'],
                 'password' => Hash::make($input['password']),
+                'rol' => $input['rol'],
+                'enterprise' => $input['enterprise']
             ]), function (User $user) {
                 $this->createTeam($user);
             });
