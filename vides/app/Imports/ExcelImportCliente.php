@@ -31,7 +31,6 @@ class ExcelImportCliente implements ToCollection, WithMultipleSheets, WithCalcul
     */
     public function collection(Collection $collection)
     {
-        
         foreach($collection as $key=>$value){
             if($value[5]!=null && $value[1]!=null && $value[0]!=null){
                 if($key!=0){  

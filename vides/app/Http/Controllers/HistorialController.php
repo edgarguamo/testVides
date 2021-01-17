@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Historial;
+use DB;
 
 class HistorialController extends Controller
 {
@@ -117,6 +118,8 @@ class HistorialController extends Controller
 
         $historial->delete();
 
+        $max = DB::table('historialestadia')->max('id') + 1; 
+        DB::statement("ALTER TABLE historialestadia AUTO_INCREMENT =  $max");
         return redirect('/historialFol/tablaHistorial');
 }
 }

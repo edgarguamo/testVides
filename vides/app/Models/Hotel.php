@@ -9,4 +9,5 @@ class Hotel extends Model
 {
     protected $table="hotel";
     public $timestamps = false;
+    
 }

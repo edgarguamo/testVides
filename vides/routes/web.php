@@ -19,11 +19,9 @@ Route::resource('/historialFol/tablaHistorial', 'App\Http\Controllers\HistorialC
 
 Route::resource('/clienteFol/tablaCliente', 'App\Http\Controllers\ClienteController');
 
+Route::resource('/tablaGeneral', 'App\Http\Controllers\TablaGeneralController');
+
 Route::post('excelHotel', 'App\Http\Controllers\UploadExcel@excelHotel')->name('excelHotel');
-
-Route::post('excelHistorial', 'App\Http\Controllers\UploadExcel@excelHistorial')->name('excelHistorial');
-
-Route::post('excelCliente', 'App\Http\Controllers\UploadExcel@excelCliente')->name('excelCliente');
 
 Route::get('/', function () {
     return view('index');

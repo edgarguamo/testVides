@@ -4,10 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Cliente;
-use DB;
+use App\Models\Archivo;
 
-class ClienteController extends Controller
+class TablaGeneralController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +15,8 @@ class ClienteController extends Controller
      */
     public function index()
     {
-        $clientes = Cliente::all();
-        return view('cargaFol.clienteFol.tablaCliente', compact('clientes'));
+        $archivos = Archivo::all();
+        return view('cargaFol.tablaGeneral', compact('archivos'));
     }
 
     /**
@@ -27,7 +26,7 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        return view('cargaFol.clienteFol.createCliente');
+        //
     }
 
     /**
@@ -38,15 +37,7 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        $clientes = new Cliente();
-        $clientes->id = $request->get('idCliente');
-        $clientes->idHEstadia = $request->get('idhesta');
-        $clientes->tipoCliente = $request->get('tipoCliente');
-        $clientes->numClientes = $request->get('numClientes');
-
-        $clientes->save();
-
-        return redirect('/clienteFol/tablaCliente');
+        //
     }
 
     /**
@@ -68,8 +59,7 @@ class ClienteController extends Controller
      */
     public function edit($id)
     {
-        $cliente = Cliente::find($id);
-        return view('cargaFol.clienteFol.editCliente', compact('cliente'));
+        //
     }
 
     /**
@@ -81,15 +71,7 @@ class ClienteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $cliente = Cliente::find($id);
-        $cliente->id = $request->get('idCliente');
-        $cliente->idHEstadia = $request->get('idhesta');
-        $cliente->tipoCliente = $request->get('tipoCliente');
-        $cliente->numClientes = $request->get('numClientes');
-
-        $cliente->save();
-
-        return redirect('/clienteFol/tablaCliente');
+        //
     }
 
     /**
@@ -100,13 +82,10 @@ class ClienteController extends Controller
      */
     public function destroy($id)
     {
-        $cliente = Cliente::find($id);
+        $archivos = Archivo::find($id);
 
-        $cliente->delete();
+        $hotel->delete();
 
-        $max = DB::table('cliente')->max('id') + 1; 
-        DB::statement("ALTER TABLE cliente AUTO_INCREMENT =  $max");
-
-        return redirect('/clienteFol/tablaCliente');
+        return redirect('/carga');
 }
 }

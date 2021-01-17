@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Hotel;
+use DB;
 
 class HotelController extends Controller
 {
@@ -69,6 +70,7 @@ class HotelController extends Controller
      */
     public function edit($id)
     {
+        
         $hotel = Hotel::find($id);
         return view('cargaFol.hotelFol.editHotel', compact('hotel'));
     }
@@ -103,9 +105,13 @@ class HotelController extends Controller
      */
     public function destroy($id)
     {
+        
         $hotel = Hotel::find($id);
 
         $hotel->delete();
+
+        $max = DB::table('hotel')->max('id') + 1; 
+        DB::statement("ALTER TABLE hotel AUTO_INCREMENT =  $max");
 
         return redirect('/hotelFol/tablaHotel');
 }
