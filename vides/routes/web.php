@@ -62,5 +62,11 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::get('/dashboard/listUser', [UserController::class,'index'])->name('dashboard.listUser');
 
-Route::post('/dashboard/',[UserController::class,'forms'])->name('dashboard.createUser');
+Route::post('/dashboard/user',[UserController::class,'create'])->name('dashboard.createUser');
+
+Route::get('/grafica', function () {
+    return view('graficas.grafica');
+})->name('grafica');
+
+
 

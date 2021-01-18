@@ -19,7 +19,9 @@
                 <button class="bg-transparent hover:bg-grey text-grey-dark font-semibold hover:text-green-600 py-2 px-4 border border-grey hover:border-green-600 rounded mr-2" type="submit">Cargar</button>
                 <br><br><a class="bg-transparent hover:bg-grey text-grey-dark font-semibold hover:text-green-600 py-2 px-4 border border-grey hover:border-green-600 rounded mr-2" href="/tablaGeneral" >Archivos cargados</a>
             </form>
-            @yield('archivo')
+            <div class="absolute inset-x-0 bottom-0  text-center ">
+                @yield('archivo')
+            </div>
         </article>
     </section>  
 </x-app-layout>
