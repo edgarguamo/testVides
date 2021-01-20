@@ -50,11 +50,18 @@
                 }
             }
         });
-        </script
-    
+        public function CargaGraph(){
+            $.ajax({
+                url:'GraphController.php',
+                type:'POST'
+            }).done(function(resp){
+                alert(resp)
+            })
+        }
 
 
 </x-app-layout>
 
 <script
-src="https://code.jquery.com/jquery-3.5.1.slim.js"></script>
+src="https://code.jquery.com/jquery-3.5.1.slim.js">
+</script>

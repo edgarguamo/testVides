@@ -63,13 +63,13 @@ Route::group(['middleware' => config('fortify.middleware', ['web'])], function (
     // Registration...
     if (Features::enabled(Features::registration())) {
         if ($enableViews) {
-            Route::get('/register', [RegisteredUserController::class, 'create'])
-                ->middleware(['guest'])
+            Route::get('/dashboard/register', [RegisteredUserController::class, 'create'])
+                ->middleware(['auth:sanctum', 'verified'])
                 ->name('register');
         }
 
-        Route::post('/register', [RegisteredUserController::class, 'store'])
-            ->middleware(['guest']);
+        Route::post('/dashboard/register', [RegisteredUserController::class, 'store'])
+            ->middleware(['auth:sanctum', 'verified']);
     }
 
     // Email Verification...

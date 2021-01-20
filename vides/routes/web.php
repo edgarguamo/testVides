@@ -60,13 +60,16 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::get('/dashboard/listUser', [UserController::class,'index'])->name('dashboard.listUser');
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/listUser', [UserController::class,'index'])->name('dashboard.listUser');
 
-Route::post('/dashboard/user',[UserController::class,'create'])->name('dashboard.createUser');
+Route::middleware(['auth:sanctum', 'verified'])->post('/dashboard/user',[UserController::class,'create'])->name('dashboard.createUser');
 
 Route::get('/grafica', function () {
     return view('graficas.grafica');
 })->name('grafica');
 
+Route::delete('/dashboard/user/', [UserController::class, 'destroy'])->name('dashboard.destroyUser');
+
+Route::get('dashboard/user/{id}/edit', [UserController::class, 'edit'])->name('dashboard.edit');
 
 

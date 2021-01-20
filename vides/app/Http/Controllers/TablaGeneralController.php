@@ -84,7 +84,7 @@ class TablaGeneralController extends Controller
     {
         $archivos = Archivo::find($id);
 
-        $hotel->delete();
+        $archivos->delete();
 
         return redirect('/carga');
 }

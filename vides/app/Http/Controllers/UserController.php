@@ -26,4 +26,13 @@ class UserController extends Controller
 
         return redirect()->route("dashboard.listUser");
     }
+
+    public function edit($id){
+        dd($id);   
+    }
+
+    public function destroy($id){
+        
+        dd($id);
+    }
 }

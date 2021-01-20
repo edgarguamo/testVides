@@ -37,7 +37,7 @@
                 <article class="overflow-hidden rounded-lg shadow-lg">
     
                     <a href="{{ route('dashboard.listUser') }}">
-                        <img alt="Placeholder" class="block object-cover h-48 w-full" src="{{asset('img/dashboard/hacer-graficas.jpg')}}">
+                        <img alt="Placeholder" class="block object-cover h-48 w-full" src="{{asset('img/dashboard/users.png')}}">
                     </a>
     
                     <header class="flex items-center justify-between leading-tight p-2 md:p-4">
