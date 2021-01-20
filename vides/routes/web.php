@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GraficoController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 /*
@@ -72,4 +73,4 @@ Route::delete('/dashboard/user/', [UserController::class, 'destroy'])->name('das
 
 Route::get('dashboard/user/{id}/edit', [UserController::class, 'edit'])->name('dashboard.edit');
 
-
+Route::get('graficas/grafica2', [GraficoController::class, 'index']);
