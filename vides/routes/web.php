@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HistorialController;
+use App\Http\Controllers\GraficoController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 /*
@@ -70,6 +71,8 @@ Route::get('/grafica', function () {
     return view('graficas.grafica');
 })->name('grafica');
 
-
 Route::resource('/dashboard/users', \App\Http\Controllers\UsersController::class);
+
+
+Route::get('graficas/grafica2', [GraficoController::class, 'index']);
 

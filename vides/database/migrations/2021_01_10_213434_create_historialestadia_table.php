@@ -17,7 +17,7 @@ class CreateHistorialestadiaTable extends Migration
             $table->id();
             $table->unsignedBigInteger('idEstablecimiento');
             $table->foreign('idEstablecimiento')->references('id')->on('hotel');
-            $table->string('fecha', 10);
+            $table->date('fecha');
             $table->integer('checkIn');
             $table->integer('checkOut');
             $table->integer('pernotaciones');
