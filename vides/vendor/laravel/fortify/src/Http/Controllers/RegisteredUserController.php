@@ -54,6 +54,6 @@ class RegisteredUserController extends Controller
 
         //$this->guard->login($user);
 
-        return redirect()->route("dashboard.listUser");
+        return redirect()->route("dashboard.listUser", $user);
     }
 }
