@@ -17,6 +17,8 @@ class ClienteController extends Controller
     public function index()
     {
         $clientes = Cliente::all();
+        $clientes = Cliente::orderBy('id')->paginate();
+
         return view('cargaFol.clienteFol.tablaCliente', compact('clientes'));
     }
 
@@ -55,9 +57,9 @@ class ClienteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        return redirect()->view('cargaFol.hotelFol.tablacliente');
     }
 
     /**

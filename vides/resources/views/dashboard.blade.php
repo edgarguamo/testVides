@@ -61,13 +61,13 @@
                 <!-- Article -->
                 <article class="overflow-hidden rounded-lg shadow-lg bg-white">
     
-                    <a href="{{ route('grafica')}}">
+                    <a href="{{ route('graficos')}}">
                         <img alt="Placeholder" class="block object-cover h-48 w-full" src="{{asset('img/dashboard/hacer-graficas.jpg')}}">
                     </a>
     
                     <header class="flex items-center justify-between leading-tight p-2 md:p-4">
                         <h1 class="text-lg">
-                            <a class="no-underline hover:underline text-black sm:ml-14" href="{{ route('grafica')}}">
+                            <a class="no-underline hover:underline text-black sm:ml-14" href="{{ route('graficos')}}">
                                 Graficos
                             </a>
                         </h1>

@@ -17,6 +17,9 @@ class HotelController extends Controller
     public function index()
     {
         $hoteles = Hotel::all();
+
+        $hotel = Hotel::orderBy('id', 'desc')->paginate();
+
         return view('cargaFol.hotelFol.tablaHotel', compact('hoteles'));
     }
 

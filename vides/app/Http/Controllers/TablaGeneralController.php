@@ -16,6 +16,8 @@ class TablaGeneralController extends Controller
     public function index()
     {
         $archivos = Archivo::all();
+        $archivos = Archivo::orderBy('id', 'desc')->paginate();
+
         return view('cargaFol.tablaGeneral', compact('archivos'));
     }
 

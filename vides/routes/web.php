@@ -4,6 +4,9 @@ use App\Http\Controllers\HistorialController;
 use App\Http\Controllers\GraficoController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DataController;
+use App\Http\Controllers\HotelController;
+use App\Http\Controllers\ClienteController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,7 +29,10 @@ Route::group(['middleware' => 'auth'], function(){
 
     Route::post('excelHotel', 'App\Http\Controllers\UploadExcel@excelHotel')->name('excelHotel');
 
-    Route::get('/dashboard/data',[HistorialController::class,'show'])->name('dashboard.data');
+    Route::get('/dashboard/data',[DataController::class,'index'])->name('dashboard.data');
+    Route::get('/dashboard/data/historial',[HistorialController::class,'index'])->name('dashboard.data.historial');
+    Route::get('/dashboard/data/hotel',[HotelController::class,'index'])->name('dashboard.data.hotel');
+    Route::get('/dashboard/data/cliente',[ClienteController::class,'index'])->name('dashboard.data.cliente');
 });
 
 Route::get('/', function () {
@@ -37,12 +43,8 @@ Route::get('carga', function(){
     return view('cargaFol.carga');
 })->name('carga');
 
-Route::get('getGrafica', function(){
+Route::get('graficos', function(){
     return view('graficas.getGrafica');
-})->name('getGrafica');
-
-Route::get('graficos', function () {
-    return "graficos";
 })->name('graficos');
 
 Route::get('hoteles', function () {
@@ -53,18 +55,6 @@ Route::get('turismo', function () {
     return "pagina de turismo";
 });
 
-Route::get('graphs-hotels', function () {
-    return "Aqui se haran las graficas";
-});
-
-Route::get('error', function () {
-    return "plantilla de erro";
-});
-
-
-Route::get('camino', function () {
-    return "plantilla de erro";
-});
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
@@ -78,11 +68,6 @@ Route::get('/grafica', function () {
 Route::resource('/dashboard/users', \App\Http\Controllers\UsersController::class);
 
 
-Route::get('graficas/grafica2', [GraficoController::class, 'index']);
+Route::get('/dashboard/graficas/grafica2', [GraficoController::class, 'index']);
 
-<<<<<<< HEAD
-Route::get('graficas/grafica2', [GraficoController::class, 'index']);
-
-Route::post('graficas/grafica2', [GraficoController::class, 'index'])->name('crear');
-=======
->>>>>>> 64f8cb12989dc84783bdc4f21ab1f433a1f8b8fd
+Route::post('/dashboard/graficas/grafica2', [GraficoController::class, 'index'])->name('crear');

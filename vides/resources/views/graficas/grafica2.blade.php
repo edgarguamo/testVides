@@ -1,8 +1,12 @@
+<link rel="stylesheet" href="{{asset('css.normalize.css')}}">
+<link rel="stylesheet" href="{{asset('css/app.css')}}">
 @extends('graficas.getGrafica')
 @section('grafica')
-    <div id="chart-container"></div>
+    <div class="flex bg-gray-100">
+        <div id="chart-container" class=""></div>
+    </div>
 
-    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js" ></script>
     <script>
         var datas = <?php echo json_encode($datas) ?>;
         var datos = <?php echo json_encode($datos) ?>;

@@ -14,14 +14,14 @@
                 <!-- Article -->
                 <article class="overflow-hidden rounded-lg shadow-lg bg-white">
     
-                    <a href="{{ route('carga') }}">
+                    <a href="{{ route('dashboard.data.historial')}}">
                         <img alt="Placeholder" class="block object-cover w-full h-48" src="{{asset('img/dashboard/cargar-archivos.png')}}">
                     </a>
     
                     <header class="leading-tight p-2 md:p-4">
                         <h2 class="text-lg ">
-                            <a class="no-underline hover:underline text-black sm:ml-14" href="{{ route('carga') }}">
-                            Informacion
+                            <a class="no-underline hover:underline text-black sm:ml-14" href="{{ route('dashboard.data.historial')}}">
+                            historial
                             </a>
                         </h2>
                     </header>
@@ -37,14 +37,14 @@
                 <!-- Article -->
                 <article class="overflow-hidden rounded-lg shadow-lg bg-white">
     
-                    <a href="{{ route('dashboard.listUser') }}">
+                    <a href="{{ route('dashboard.data.hotel')}}">
                         <img alt="Placeholder" class="block object-cover h-48 w-full" src="{{asset('img/dashboard/users.png')}}">
                     </a>
     
                     <header class="flex items-center justify-between leading-tight p-2 md:p-4">
                         <h1 class="text-lg">
-                            <a class="no-underline hover:underline text-black sm:ml-14" href="{{ route('dashboard.listUser') }}">
-                                Historial Hoteles
+                            <a class="no-underline hover:underline text-black sm:ml-14" href="{{ route('dashboard.data.hotel')}}">
+                                Hoteles
                             </a>
                         </h1>
                     </header>
@@ -60,13 +60,13 @@
                 <!-- Article -->
                 <article class="overflow-hidden rounded-lg shadow-lg bg-white">
     
-                    <a href="{{ route('grafica')}}">
+                    <a href="{{ route('dashboard.data.cliente')}}">
                         <img alt="Placeholder" class="block object-cover h-48 w-full" src="{{asset('img/dashboard/hacer-graficas.jpg')}}">
                     </a>
     
                     <header class="flex items-center justify-between leading-tight p-2 md:p-4">
                         <h1 class="text-lg">
-                            <a class="no-underline hover:underline text-black sm:ml-14" href="{{ route('grafica')}}">
+                            <a class="no-underline hover:underline text-black sm:ml-14" href="{{ route('dashboard.data.cliente')}}">
                                 clientes
                             </a>
                         </h1>

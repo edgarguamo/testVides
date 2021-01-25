@@ -17,6 +17,8 @@ class HistorialController extends Controller
     public function index()
     {
         $historiales = Historial::all();
+        $historiales = Historial::orderBy('id', 'desc')->paginate();
+
         return view('cargaFol.historialFol.tablaHistorial', compact('historiales'));
     }
 
