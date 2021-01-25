@@ -33,12 +33,24 @@ class ExcelImportCliente implements ToCollection, WithMultipleSheets, WithCalcul
     {
         foreach($collection as $key=>$value){
             if($value[5]!=null && $value[1]!=null && $value[0]!=null){
-                if($key!=0){  
+                if($key!=0){ 
+                    $fechaEx = explode('/', $value[5]);
+                    $fecha = $fechaEx[2].'-'.$fechaEx[1].'-'.$fechaEx[0]; 
                     DB::table('cliente')->insert([
-                        'idHEstadia' => DB::table('historialestadia')->select('id')->where('fecha', '=', $value[5])->first()->id,
+                        'idHEstadia' => DB::table('historialestadia')
+                        ->select('historialestadia.id')
+                        ->join('hotel', 'historialestadia.idEstablecimiento', 'hotel.id')
+                        ->where('nombres', '=', $value[0])
+                        ->where('fecha', '=', $fecha)
+                        ->first()->id,
                         'tipoCliente' => 'Nacional', 'numCLientes' => $value[9]]);
                     DB::table('cliente')->insert([
-                        'idHEstadia' => DB::table('historialestadia')->select('id')->where('fecha', '=', $value[5])->first()->id,
+                        'idHEstadia' => DB::table('historialestadia')
+                        ->select('historialestadia.id')
+                        ->join('hotel', 'historialestadia.idEstablecimiento', 'hotel.id')
+                        ->where('nombres', '=', $value[0])
+                        ->where('fecha', '=', $fecha)
+                        ->first()->id,
                         'tipoCliente' => 'Extranjero', 'numCLientes' => $value[10]]); 
                 }
             }

@@ -32,6 +32,10 @@ Route::get('carga', function(){
     return view('cargaFol.carga');
 })->name('carga');
 
+Route::get('getGrafica', function(){
+    return view('graficas.getGrafica');
+})->name('getGrafica');
+
 Route::get('graficos', function () {
     return "graficos";
 })->name('graficos');
@@ -74,3 +78,5 @@ Route::delete('/dashboard/user/', [UserController::class, 'destroy'])->name('das
 Route::get('dashboard/user/{id}/edit', [UserController::class, 'edit'])->name('dashboard.edit');
 
 Route::get('graficas/grafica2', [GraficoController::class, 'index']);
+
+Route::post('graficas/grafica2', [GraficoController::class, 'index'])->name('crear');

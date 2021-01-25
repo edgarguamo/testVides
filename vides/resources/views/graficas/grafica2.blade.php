@@ -1,26 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HighCharts</title>
-</head>
-<body>
-    
+@extends('graficas.getGrafica')
+@section('grafica')
     <div id="chart-container"></div>
 
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script>
         var datas = <?php echo json_encode($datas) ?>;
-        var datas1 = <?php echo json_encode($datas1) ?>;
+        var datos = <?php echo json_encode($datos) ?>;
 
         Highcharts.chart('chart-container', {
             title:{
-                text: 'Titulo'
-            },
-            subtitle:{
-                text: 'Subtitulo'
+                text: 'Informacion de hoteles'
             },
             xAxis:{
                 categories:['Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
@@ -41,7 +30,7 @@
                 }
             },
             series:[{
-                name: 'New User',
+                name: datos,
                 data: datas
             }],
             responsive:{
@@ -62,5 +51,4 @@
             }
         })
         </script>
-</body>
-</html>
+@endsection

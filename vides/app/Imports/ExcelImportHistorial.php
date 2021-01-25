@@ -36,7 +36,7 @@ class ExcelImportHistorial implements ToCollection, WithMultipleSheets, WithCalc
             if($value[5]!=null && $value[1]!=null && $value[0]!=null){
                 if($key!=0){
                     $fechaEx = explode('/', $value[5]);
-                    $fecha = $fecha[2].'-'.$fecha[1].'-'.$fecha[0];
+                    $fecha = $fechaEx[2].'-'.$fechaEx[1].'-'.$fechaEx[0];
                     DB::table('historialestadia')->insert([
                         'idEstablecimiento' => DB::table('hotel')->select('id')->where('nombres', '=', $value[0])->first()->id,
                      'fecha' => $fecha, 'checkIn' => $value[6], 'checkOut' => $value[7], 'pernotaciones' => $value[8], 
