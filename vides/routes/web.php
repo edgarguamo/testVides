@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HistorialController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 /*
@@ -12,16 +13,20 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['middleware' => 'auth'], function(){
 
-Route::resource('/hotelFol/tablaHotel', 'App\Http\Controllers\HotelController');
+    Route::resource('/hotelFol/tablaHotel', 'App\Http\Controllers\HotelController');
 
-Route::resource('/historialFol/tablaHistorial', 'App\Http\Controllers\HistorialController');
+    Route::resource('/historialFol/tablaHistorial', 'App\Http\Controllers\HistorialController');
 
-Route::resource('/clienteFol/tablaCliente', 'App\Http\Controllers\ClienteController');
+    Route::resource('/clienteFol/tablaCliente', 'App\Http\Controllers\ClienteController');
 
-Route::resource('/tablaGeneral', 'App\Http\Controllers\TablaGeneralController');
+    Route::resource('/tablaGeneral', 'App\Http\Controllers\TablaGeneralController');
 
-Route::post('excelHotel', 'App\Http\Controllers\UploadExcel@excelHotel')->name('excelHotel');
+    Route::post('excelHotel', 'App\Http\Controllers\UploadExcel@excelHotel')->name('excelHotel');
+
+    Route::get('/dashboard/data',[HistorialController::class,'show'])->name('dashboard.data');
+});
 
 Route::get('/', function () {
     return view('index');
@@ -60,16 +65,11 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/listUser', [UserController::class,'index'])->name('dashboard.listUser');
-
-Route::middleware(['auth:sanctum', 'verified'])->post('/dashboard/user',[UserController::class,'create'])->name('dashboard.createUser');
 
 Route::get('/grafica', function () {
     return view('graficas.grafica');
 })->name('grafica');
 
-Route::delete('/dashboard/user/', [UserController::class, 'destroy'])->name('dashboard.destroyUser');
 
-Route::get('dashboard/user/{id}/edit', [UserController::class, 'edit'])->name('dashboard.edit');
-
+Route::resource('/dashboard/users', \App\Http\Controllers\UsersController::class);
 

@@ -26,7 +26,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','rol','enterprise'
+        'name', 'email', 'password',
     ];
 
     /**
@@ -58,4 +58,18 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function __construct(array $attributes = [])
+    {
+        parent::__construct($attributes);
+        self::created(function (User $user) {
+            if (!$user->roles()->get()->contains(1)) {
+                $user->roles()->attach(1);
+            }
+        });
+    }
+
+    public function roles(){
+        return $this->belongsToMany(Role::class);
+    }
 }

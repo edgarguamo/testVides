@@ -18,8 +18,16 @@
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
+                    @can('user_access')
+                        <x-jet-nav-link href="{{ route('users.index') }}" :active="request()->routeIs('dashboard.users.*')">
+                            {{ __('Usuarios') }}
+                        </x-jet-nav-link>
+                    @endcan
                     <x-jet-nav-link href="{{ route('carga') }}" :active="request()->routeIs('carga')">
                         {{ __('Carga') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('dashboard.data') }}" :active="request()->routeIs('dashboard.data')">
+                        {{ __('Datos') }}
                     </x-jet-nav-link>
                     <x-jet-nav-link href="{{ route('graficos') }}" :active="request()->routeIs('graficos')">
                         {{ __('Graficos') }}
@@ -132,6 +140,11 @@
             <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-jet-responsive-nav-link>
+            @can('user_access')
+            <x-jet-responsive-nav-link href="{{ route('users.index') }}" :active="request()->routeIs('dashboard')">
+                {{ __('Dashboard') }}
+            </x-jet-responsive-nav-link>
+            @endcan
             <x-jet-responsive-nav-link href="{{ route('carga') }}" :active="request()->routeIs('dashboard')">
                 {{ __('carga') }}
             </x-jet-responsive-nav-link>
