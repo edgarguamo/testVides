@@ -16,7 +16,7 @@
                             Seleccione los datos
                         </label>
                         <select id="tipoDatos" name="tipoDatos" type="text" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 focus:outline-none focus:bg-gray-300 focus:shadow-inner">
-                                <option class="">Tipo de datos</option>
+                                <option>Tipo de datos</option>
                                 <option value="generales">Datos generales</option>
                                 <option value="mensuales">Datos mensuales</option>
                         </select>
@@ -38,21 +38,51 @@
                             });
 
                         </script>
-                        <select class="dgeneral block w-full p-3 mt-2 text-gray-700 bg-gray-200 focus:outline-none focus:bg-gray-300 focus:shadow-inner" name="hotel" type="text" style="display:none">
-                            <option value="SONESTA HOTEL LOJA">Hotel Sonesta</option>
-                            <option value="GRAND VICTORIA BOUTIQUE">Hotel Gran Victoria</option>
-                        </select>
-                        <select class="dgeneral" name="datos" type="text" style="display:none">
-                            <option value="numHabitaciones">Numero de habitaciones</option>
-                            <option value="plazas">Plazas</option>
-                            <option value="empTemp">Empleados temporales</option>
-                        </select>
-                        <select class="dmensual" name="hotel" type="text" style="display:none">
+                        <select class="dgeneral block w-full p-3 mt-2 text-gray-700 bg-gray-200 focus:outline-none focus:bg-gray-300 focus:shadow-inner" name="hotelG" type="text" style="display:none">
+                            <option value="hotel">Seleccionar hotel</option>
                             <option value="SONESTA HOTEL LOJA">Hotel Sonesta</option>
                             <option value="GRAND VICTORIA BOUTIQUE">Hotel Gran Victoria</option>
                         </select>
 
-                        <select class="dmensual" name="datos" type="text" style="display:none">
+                        <select class="dgeneral block w-full p-3 mt-2 text-gray-700 bg-gray-200 focus:outline-none focus:bg-gray-300 focus:shadow-inner" name="tipoGraficaG" type="text" style="display:none">
+                            <option value="grafica">Tipo de grafica</option>
+                            <option value="line">Lineas</option>
+                            <option value="spline">Spline</option>
+                            <option value="area">Area</option>
+                            <option value="areaspline">Areaspline</option>
+                            <option value="column">Columnas</option>
+                            <option value="bar">Barras</option>
+                            <option value="pie">Pastel</option>
+                            <option value="scatter">Scatter</option>
+                        </select>
+
+                        <select class="dgeneral" name="datosG" type="text" style="display:none">
+                            <option value="datos">Seleccionar datos</option>
+                            <option value="numHabitaciones">Numero de habitaciones</option>
+                            <option value="plazas">Plazas</option>
+                            <option value="empTemp">Empleados temporales</option>
+                        </select>
+
+                        <select class="dmensual" name="hotelM" type="text" style="display:none">
+                            <option value="hotel">Seleccionar hotel</option>
+                            <option value="SONESTA HOTEL LOJA">Hotel Sonesta</option>
+                            <option value="GRAND VICTORIA BOUTIQUE">Hotel Gran Victoria</option>
+                        </select>
+
+                        <select class="dgeneral block w-full p-3 mt-2 text-gray-700 bg-gray-200 focus:outline-none focus:bg-gray-300 focus:shadow-inner" name="tipoGraficaM" type="text" style="display:none">
+                            <option value="grafica">Tipo de grafica</option>
+                            <option value="line">Lineas</option>
+                            <option value="spline">Spline</option>
+                            <option value="area">Area</option>
+                            <option value="areaspline">Areaspline</option>
+                            <option value="column">Columnas</option>
+                            <option value="bar">Barras</option>
+                            <option value="pie">Pastel</option>
+                            <option value="scatter">Scatter</option>
+                        </select>
+
+                        <select class="dmensual" name="datosM" type="text" style="display:none">
+                            <option value="datos">Seleccionar datos</option>
                             <option value="Nacional">Nacional</option>
                             <option value="Extranjero">Extranjero</option>
                             <option value="checkIn">CheckIn</option>
@@ -65,6 +95,7 @@
                         </select>
 
                         <select class="dmensual" name="mesInic" type="text" style="display:none">
+                            <option value="mesinicio">Mes Inicial</option>
                             <option value="2019-05-01">Mayo</option>
                             <option value="2019-06-01">Junio</option>
                             <option value="2019-07-01">Julio</option>
@@ -76,6 +107,7 @@
                         </select>
 
                         <select class="dmensual" name="mesFin" type="text" style="display:none">
+                            <option value="mesfin">Mes final</option>
                             <option value="2019-05-30">Mayo</option>
                             <option value="2019-06-31">Junio</option>
                             <option value="2019-07-30">Julio</option>
