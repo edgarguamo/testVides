@@ -33,6 +33,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/dashboard/data/historial',[HistorialController::class,'index'])->name('dashboard.data.historial');
     Route::get('/dashboard/data/hotel',[HotelController::class,'index'])->name('dashboard.data.hotel');
     Route::get('/dashboard/data/cliente',[ClienteController::class,'index'])->name('dashboard.data.cliente');
+    Route::get('/dashboard/data/hotel/create', [HotelController::class, 'create'])->name('dashboard.data.hotel.create');
 });
 
 Route::get('/', function () {
@@ -62,7 +63,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 
 Route::get('/grafica', function () {
-    return view('graficas.grafica');
+    return view('graficas.grafica2');
 })->name('grafica');
 
 Route::resource('/dashboard/users', \App\Http\Controllers\UsersController::class);

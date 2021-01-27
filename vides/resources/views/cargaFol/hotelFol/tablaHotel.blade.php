@@ -5,10 +5,10 @@
         </h2>
     </x-slot>
     <div class="pt-12">
-        <a href="tablaHotel/create" class="border bg-gray-800  text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-gray-300 focus:outline-none focus:shadow-outline">Crear</a>
+        <a href="{{route('dashboard.data.hotel.create')}}" class="border bg-gray-800  text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-gray-300 focus:outline-none focus:shadow-outline">Crear</a>
     </div>
     <br>
-    <h3 class="text-center font-semibold text-3xl lg:text-4xl text-gray-800">Datos de hoteles:</h3>
+    <h3 class="text-center font-semibold text-3xl lg:text-4xl text-gray-800">Datos de hoteles</h3>
     <br>
     <table id="hoteles" align="center" class="table table-bordered table-striped w-1/2">
         <thead class="bg-primary text-white">
@@ -26,13 +26,13 @@
         <tbody>
         @foreach ($hoteles as $hotel)
             <tr class="bg-white border-4 border-gray-200">    
-                <td class="px-4 py-2 items-center">{{$hotel['id']}}</td>
-                <td class="px-32 py-2 items-center">{{$hotel['nombres']}}</td>
-                <td class="px-6 py-2 items-center">{{$hotel['categoria']}}</td>
-                <td class="px-4 py-2 items-center">{{$hotel['numHabitaciones']}}</td>
-                <td class="px-4 py-2 items-center">{{$hotel['plazas']}}</td>
-                <td class="px-4 y-2 items-center">{{$hotel['empTemp']}}</td>    
-                <td class="px-16 py-2 items-center">
+                <td class="px-4 py-2 text-center">{{$hotel['id']}}</td>
+                <td class="px-32 py-2 text-center">{{$hotel['nombres']}}</td>
+                <td class="px-6 py-2 text-center">{{$hotel['categoria']}}</td>
+                <td class="px-4 py-2 text-center">{{$hotel['numHabitaciones']}}</td>
+                <td class="px-4 py-2 text-center">{{$hotel['plazas']}}</td>
+                <td class="px-4 y-2 text-center">{{$hotel['empTemp']}}</td>    
+                <td class="px-16 py-2 text  -center">
                     <div class="px-4 items-center flex gap-3">
                         <form action="/hotelFol/tablaHotel/{{ $hotel->id}}/edit" method="POST">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -60,8 +60,8 @@
     </table>
     <button
         type="button"
-        class="border border-gray-800 bg-gray-800 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-gray-800 focus:outline-none focus:shadow-outline">
-        <a href="/dashboard/datos">Atras</a>
+        class="border border-gray-800 bg-gray-800 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-gray-200 hover:border-gray-200 focus:outline-none focus:shadow-outline">
+        <a href="/dashboard/data">Atras</a>
     </button>
 
     <script src="{{asset('js/style.js')}}"></script>
