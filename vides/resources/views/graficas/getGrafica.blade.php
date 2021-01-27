@@ -28,12 +28,12 @@
                             var correctPlaces1 = ['mensuales'];
 
                             $('select[name=tipoDatos]').change(function(){
-                                $('select[class=dgeneral]').toggle(correctPlaces.indexOf($(this).val())>=0);
+                                $('select[class="dgeneral block w-full p-3 mt-2 text-gray-700 bg-gray-200 focus:outline-none focus:bg-gray-300 focus:shadow-inner"]').toggle(correctPlaces.indexOf($(this).val())>=0);
 
                             });
 
                             $('select[name=tipoDatos]').change(function(){
-                                $('select[class=dmensual]').toggle(correctPlaces1.indexOf($(this).val())>=0);
+                                $('select[class="dmensual block w-full p-3 mt-2 text-gray-700 bg-gray-200 focus:outline-none focus:bg-gray-300 focus:shadow-inner"]').toggle(correctPlaces1.indexOf($(this).val())>=0);
 
                             });
 
@@ -56,20 +56,20 @@
                             <option value="scatter">Scatter</option>
                         </select>
 
-                        <select class="dgeneral" name="datosG" type="text" style="display:none">
+                        <select class="dgeneral block w-full p-3 mt-2 text-gray-700 bg-gray-200 focus:outline-none focus:bg-gray-300 focus:shadow-inner" name="datosG" type="text" style="display:none">
                             <option value="datos">Seleccionar datos</option>
                             <option value="numHabitaciones">Numero de habitaciones</option>
                             <option value="plazas">Plazas</option>
                             <option value="empTemp">Empleados temporales</option>
                         </select>
 
-                        <select class="dmensual" name="hotelM" type="text" style="display:none">
+                        <select class="dmensual block w-full p-3 mt-2 text-gray-700 bg-gray-200 focus:outline-none focus:bg-gray-300 focus:shadow-inner" name="hotelM" type="text" style="display:none">
                             <option value="hotel">Seleccionar hotel</option>
                             <option value="SONESTA HOTEL LOJA">Hotel Sonesta</option>
                             <option value="GRAND VICTORIA BOUTIQUE">Hotel Gran Victoria</option>
                         </select>
 
-                        <select class="dgeneral block w-full p-3 mt-2 text-gray-700 bg-gray-200 focus:outline-none focus:bg-gray-300 focus:shadow-inner" name="tipoGraficaM" type="text" style="display:none">
+                        <select class="dmensual block w-full p-3 mt-2 text-gray-700 bg-gray-200 focus:outline-none focus:bg-gray-300 focus:shadow-inner" name="tipoGraficaM" type="text" style="display:none">
                             <option value="grafica">Tipo de grafica</option>
                             <option value="line">Lineas</option>
                             <option value="spline">Spline</option>
@@ -81,7 +81,7 @@
                             <option value="scatter">Scatter</option>
                         </select>
 
-                        <select class="dmensual" name="datosM" type="text" style="display:none">
+                        <select class="dmensual block w-full p-3 mt-2 text-gray-700 bg-gray-200 focus:outline-none focus:bg-gray-300 focus:shadow-inner" name="datosM" type="text" style="display:none">
                             <option value="datos">Seleccionar datos</option>
                             <option value="Nacional">Nacional</option>
                             <option value="Extranjero">Extranjero</option>
@@ -94,7 +94,7 @@
                             <option value="tarPer">Tarifa por persona</option>
                         </select>
 
-                        <select class="dmensual" name="mesInic" type="text" style="display:none">
+                        <select class="dmensual block w-full p-3 mt-2 text-gray-700 bg-gray-200 focus:outline-none focus:bg-gray-300 focus:shadow-inner" name="mesInic" type="text" style="display:none">
                             <option value="mesinicio">Mes Inicial</option>
                             <option value="2019-05-01">Mayo</option>
                             <option value="2019-06-01">Junio</option>
@@ -106,7 +106,7 @@
                             <option value="2019-12-01">Diciembre</option>
                         </select>
 
-                        <select class="dmensual" name="mesFin" type="text" style="display:none">
+                        <select class="dmensual block w-full p-3 mt-2 text-gray-700 bg-gray-200 focus:outline-none focus:bg-gray-300 focus:shadow-inner" name="mesFin" type="text" style="display:none">
                             <option value="mesfin">Mes final</option>
                             <option value="2019-05-30">Mayo</option>
                             <option value="2019-06-31">Junio</option>
