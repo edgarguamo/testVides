@@ -14,18 +14,18 @@ class CreateHistorialestadiaTable extends Migration
     public function up()
     {
         Schema::create('historialestadia', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('idEstablecimiento');
-            $table->foreign('idEstablecimiento')->references('id')->on('hotel');
-            $table->date('fecha');
-            $table->integer('checkIn');
-            $table->integer('checkOut');
-            $table->integer('pernotaciones');
-            $table->tinyInteger('habitOcupadas');
-            $table->double('ventaNeta');
-            $table->string('tipoTarifa', 20);
-            $table->double('promTarifa');
-            $table->double('tarPer');
+            $table->id()->cascadeOnDelete();
+            $table->unsignedBigInteger('idEstablecimiento')->cascadeOnDelete();
+            $table->foreign('idEstablecimiento')->references('id')->on('hotel')->cascadeOnDelete();
+            $table->date('fecha')->cascadeOnDelete();
+            $table->integer('checkIn')->cascadeOnDelete();
+            $table->integer('checkOut')->cascadeOnDelete();
+            $table->integer('pernotaciones')->cascadeOnDelete();
+            $table->tinyInteger('habitOcupadas')->cascadeOnDelete();
+            $table->double('ventaNeta')->cascadeOnDelete();
+            $table->string('tipoTarifa', 20)->cascadeOnDelete();
+            $table->double('promTarifa')->cascadeOnDelete();
+            $table->double('tarPer')->cascadeOnDelete();
         });
     }
 

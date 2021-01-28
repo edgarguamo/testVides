@@ -4,17 +4,12 @@
             Visualizar Registro
         </h2>
     </x-slot>
-    <h3 class="text-center font-semibold text-3xl lg:text-4xl text-gray-800 m-6">Datos de Clientes</h3>
-    <button
-        type="button"
-        class="border border-gray-800 bg-gray-800 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-gray-800 focus:outline-none focus:shadow-outline">
-        <a href="/dashboard/datos">Atras</a>
-    </button>
-    <button
-        type="button"
-        class="border border-gray-800 bg-gray-800 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-gray-800 focus:outline-none focus:shadow-outline">
-        <a href="{{route('dashboard.data.cliente.create')}}">Crear</a>
-    </button>
+    <h3 class="text-center font-semibold text-3xl lg:text-4xl text-gray-800 m-3">Datos de Clientes</h3>
+    <div class="pt-12 grid grid-cols-2 justify-items-center">
+        <a href="{{route('dashboard.data.cliente.create')}}" class="border bg-gray-800  text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-gray-300 focus:outline-none focus:shadow-outline">Crear</a>
+        <a href="{{route('dashboard.data')}}" class="border border-gray-800 bg-gray-800 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-gray-200 hover:border-gray-200 focus:outline-none focus:shadow-outline">Atras</a>
+    </div>
+    <div class="overflow-x-auto absolute inset-x-0  text-center mt-8 ">
     <table id="clientes" align="center" class="table table-bordered table-striped w-4/6">
         <thead class="bg-primary text-white">
         <tr class="bg-gray-800 rounded-md">
@@ -58,12 +53,7 @@
         @endforeach
         </tbody>
     </table>
-    <button
-        type="button"
-        class="border border-gray-800 bg-gray-800 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-gray-800 focus:outline-none focus:shadow-outline">
-        <a href="/dashboard/data">Atras</a>
-    </button>
-
+    </div>
     <script src="{{asset('js/style.js')}}"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>

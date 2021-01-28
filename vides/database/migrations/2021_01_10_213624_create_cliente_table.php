@@ -14,11 +14,11 @@ class CreateClienteTable extends Migration
     public function up()
     {
         Schema::create('cliente', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('idHEstadia');
-            $table->foreign('idHEstadia')->references('id')->on('historialestadia');
-            $table->enum('tipoCliente', ['Nacional', 'Extranjero']);
-            $table->integer('numClientes');
+            $table->id()->cascadeOnDelete();
+            $table->unsignedBigInteger('idHEstadia')->cascadeOnDelete();
+            $table->foreign('idHEstadia')->references('id')->on('historialestadia')->cascadeOnDelete();
+            $table->enum('tipoCliente', ['Nacional', 'Extranjero'])->cascadeOnDelete();
+            $table->integer('numClientes')->cascadeOnDelete();
         });
     }
 

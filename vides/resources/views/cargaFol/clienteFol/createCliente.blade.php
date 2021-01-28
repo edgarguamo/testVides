@@ -20,7 +20,7 @@
                 <input id="numClientes" name="numClientes" type="text" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner" tabindex="1">
 
             <div class="flex justify-between gap-3 object-cover">
-                <span class="w-1/2">
+                <span class="w-1/2 mt-9">
                     <a href="{{route('dashboard.data.cliente')}}" class="w-full lg:px-14 py-3 mt-6 font-medium tracking-widest text-white uppercase bg-red-500 shadow-lg focus:outline-none hover:bg-red-900 hover:shadow-none" tabindex="5">Cancel</a>
 
                 </span>
