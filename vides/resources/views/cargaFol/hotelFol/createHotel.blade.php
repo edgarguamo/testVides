@@ -28,10 +28,8 @@
             <input id="empTemp" name="empTemp" type="text" placeholder="12" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner" required tabindex="1">
             
             <div class="flex justify-between gap-3 object-cover">
-                <span class="w-1/2">
-                    <button type="sumbit" class="w-full lg:px-14 py-3 mt-6 font-medium tracking-widest text-white uppercase bg-red-500 shadow-lg focus:outline-none hover:bg-red-900 hover:shadow-none" tabindex="4">
-                        <a href="/hotelFol/tablaHotel" class="btn btn-secondary" tabindex="5">Cancel</a>
-                    </button>
+                <span class="w-1/2 mt-9">
+                    <a href="{{route('dashboard.data.hotel')}}" class="w-full lg:px-14 py-3 mt-6 font-medium tracking-widest text-white uppercase bg-red-500 shadow-lg focus:outline-none hover:bg-red-900 hover:shadow-none" tabindex="5">Cancel</a>
                 </span>
                 <span class="1/2">
                     <button type="sumbit" class="w-full lg:px-14 md:px-7 py-3 mt-6 font-medium tracking-widest text-white uppercase bg-blue-500 shadow-lg focus:outline-none hover:bg-blue-900 hover:shadow-none" tabindex="4">

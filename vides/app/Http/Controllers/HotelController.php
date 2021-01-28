@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Hotel;
+use App\Models\Historial;
 use DB;
 
 class HotelController extends Controller
@@ -110,6 +111,9 @@ class HotelController extends Controller
     {
         
         $hotel = Hotel::find($id);
+        
+        DB::table('cliente')->where('idhestadia',Historial::select('id')->where('idHotel', '=', $hotel))->delete();
+        DB::table('historialestadia')->where('idestablecimiento',$id)->delete();
 
         $hotel->delete();
 

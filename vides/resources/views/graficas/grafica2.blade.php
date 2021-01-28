@@ -42,9 +42,9 @@
                 }
             },
             legend:{
-                layout: 'vertical',
-                align: 'right',
-                verticalAlign: 'middle'
+                layout: 'horizontal',
+                align: 'center',
+                verticalAlign: 'top'
             },
             plotOptions:{
                 series:{

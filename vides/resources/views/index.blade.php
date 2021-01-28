@@ -30,10 +30,10 @@
           <div class="flex items-center text-center lg:text-left px-8 md:px-12 lg:w-1/2">
               <div>
                   <h2 class="text-3xl font-semibold text-gray-800 md:text-4xl">Hoteles <span class="text-indigo-600">Loja</span></h2>
-                  <p class="mt-2 text-sm text-gray-500 md:text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis commodi cum cupiditate ducimus, fugit harum id necessitatibus odio quam quasi, quibusdam rem tempora voluptates. Cumque debitis dignissimos id quam vel!</p>
+                  <p class="mt-2 text-sm text-gray-500 md:text-base">Registro e informacion estadistica de hoteles de la provincia de 
+                    Loja donde podra generar graficos interactivos y comparar informacion</p>
                   <div class="flex justify-center lg:justify-start mt-6">
-                      <a class="px-4 py-3 bg-gray-900 text-gray-200 text-xs font-semibold rounded hover:bg-gray-800" href="#">Get Started</a>
-                      <a class="mx-4 px-4 py-3 bg-gray-300 text-gray-900 text-xs font-semibold rounded hover:bg-gray-400" href="#">Learn More</a>
+                      <a class="px-4 py-3 bg-gray-900 text-gray-200 text-xs font-semibold rounded hover:bg-gray-800" href="{{ route('graficos')}}">Ver informacion</a>
                   </div>
               </div>
           </div>
@@ -132,8 +132,7 @@
           <div class="flex-grow text-white">
             <h2 class="text-xl title-font font-medium mb-3 text-center">Distribucion de Hoteles</h2>
             <p class="leading-relaxed text-sm text-justify">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci blanditiis earum optio iusto eveniet 
-              expedita nesciunt voluptatem debitis laudantium molestias provident beatae 
+              Registro e informacion estadistica de hoteles de la provincia de loja 
             </p>
           </div>
         </div>
@@ -142,8 +141,7 @@
           <div class="flex-grow text-white">
             <h2 class="text-xl title-font font-medium mb-3 text-center">Distribucion de Habitaicones</h2>
             <p class="leading-relaxed text-sm text-justify ">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci blanditiis earum optio iusto eveniet 
-              expedita nesciunt voluptatem debitis laudantium molestias provident beatae 
+              Registro e informacion estadistica de hoteles de la provincia de loja 
             </p>
           </div>
         </div>

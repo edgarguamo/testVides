@@ -58,7 +58,7 @@
         </div>
 
         <!-- Col-3 -->
-        <div class="p-5 w-1/2 sm:w-4/12 md:w-4/12 ">
+        <div class="p-5 w-1/2 sm:w-4/12 md:w-4/12 lg:pl-32 ">
             <!-- Col Title -->
             <div class="text-xs uppercase text-gray-400 font-medium mb-6">
                 Redes Sociales
@@ -66,12 +66,14 @@
 
             <!-- Links -->  
             <a href="#" class="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
-                Configuration
+                Facebook
             </a>
             <a href="#" class="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
-                Theme Configuration
+                Instagram
             </a>
-            
+            <a href="https://github.com/edgarguamo/testVides" class="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
+                github
+            </a>
         </div>   
 </footer>
     

@@ -4,14 +4,14 @@
             Visualizar Registro
         </h2>
     </x-slot>
-    <h3 class="text-center font-semibold text-3xl lg:text-4xl text-gray-800 m-6">Datos de historiales:</h3>
+    <h3 class="text-center font-semibold text-3xl lg:text-4xl text-gray-800 m-6">Datos de historiales</h3>
     
-    <button
-        type="button"
-        class="border border-gray-800 bg-gray-800 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-gray-800 focus:outline-none focus:shadow-outline">
-        <a href="tablaHistorial/create">Crear</a>
-    </button>
+    <div class="pt-12 grid grid-cols-2 justify-items-center">
+        <a href="{{route('dashboard.data.historial.create')}}" class="border border-gray-800 bg-gray-800 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-gray-800 focus:outline-none focus:shadow-outline">Crear</a>
+        <a href="/dashboard/data" class="border border-gray-800 bg-gray-800 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-gray-800 focus:outline-none focus:shadow-outline">Atras</a>
+    </div>
 
+    <div class="overflow-x-auto absolute inset-x-0  text-center mt-8">
     <table id="historiales" align="center" class="table table-bordered table-striped w-1/2">
         <thead class="bg-primary text-white">
             <tr class="bg-gray-800">
@@ -44,7 +44,7 @@
                 <td class="px-4 py-2 items-center">{{$historial['promTarifa']}}</td>
                 <td class="px-4py-2 items-center">{{$historial['tarPer']}}</td> 
                 <td>
-                <form action="/historialFol/tablaHistorial/{{ $historial->id}}/edit" method="POST">
+                <form action="/historialFol/tablaHistorial/{{ $historial->id}}/edit" method="GET">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <button link type="submit" class="uppercase p-3 flex items-center bg-blue-600 text-blue-50 max-w-max shadow-sm hover:shadow-lg rounded-full w-12 h-12 ">
                         <svg width="32" height="32"  viewBox="0 0 32 32" style="transform: rotate(360deg);"><path d="M29 27.586l-7.552-7.552a11.018 11.018 0 1 0-1.414 1.414L27.586 29zM4 13a9 9 0 1 1 9 9a9.01 9.01 0 0 1-9-9z" fill="currentColor"></path></svg>
@@ -67,11 +67,8 @@
         @endforeach
         </tbody>
     </table>
-    <button
-        type="button"
-        class="border border-gray-800 bg-gray-800 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-gray-800 focus:outline-none focus:shadow-outline">
-        <a href="/dashboard/data">Atras</a>
-    </button>
+    </div>
+    
     <script src="{{asset('js/style.js')}}"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>

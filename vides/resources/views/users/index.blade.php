@@ -6,18 +6,14 @@
     </x-slot>
 
     <x-jet-validation-errors class="mb-4" />
-
+    <div>
     <h3 class="text-center font-semibold text-3xl mt-10 lg:text-4xl text-gray-800">Lista de Usuarios</h3>
-    <div class=" block content-center">
-        <button
-        type="button"
-        
-        class="border border-gray-800 bg-gray-800 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-gray-800 focus:outline-none focus:shadow-outline">
-        <a  class="items-center" href="{{route('users.create')}}">Crear Usuario</a>
-    </button>
+    <div class=" grid justify-items-center mb-8">
+        <a  class="border border-gray-800 bg-gray-800 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-gray-800 focus:outline-none focus:shadow-outline" href="{{route('users.create')}}">
+            Crear Usuario</a>
     </div>
-    
-        <table id="Usuarios" align="center" class="table table-bordered table-striped w-4/6 ">
+    <div class="overflow-x-auto">
+        <table id="Usuarios" align="center" class="table table-bordered table-striped w-4/6">
             <div class="rounded-md">
                 <thead class="bg-primary text-white">
                     <tr class="bg-gray-800 rounded-md">
@@ -73,5 +69,7 @@
         <div class="lg:w-5/6 md:w-12/12">
             {{$users->links()}}        
         </div>
+    </div>
+    
         <script src="{{asset('js/style.js')}}"></script>    
 </x-app-layout>

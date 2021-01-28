@@ -7,7 +7,7 @@
 <body>
 <div class="container mx-auto my-6" >
     <div class="grid grid-cols-1 md:grid-cols-2">
-            <div class="w-10/12 p-12 bg-white w-1/2 my-2 max-h-96 md:h-screen">
+            <div class="w-10/12 p-12 bg-white my-2 max-h-4/6 md:h-screen">
             <h2 class="text-center ">Panel de datos</h2>
                 <form method="POST" action="{{ route('crear') }}">
                     @csrf

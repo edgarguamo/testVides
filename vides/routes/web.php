@@ -34,6 +34,9 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/dashboard/data/hotel',[HotelController::class,'index'])->name('dashboard.data.hotel');
     Route::get('/dashboard/data/cliente',[ClienteController::class,'index'])->name('dashboard.data.cliente');
     Route::get('/dashboard/data/hotel/create', [HotelController::class, 'create'])->name('dashboard.data.hotel.create');
+    Route::get('/dashboard/data/cliente/create', [ClienteController::class, 'create'])->name('dashboard.data.cliente.create');
+    Route::get('/dashboard/data/historial/create', [HistorialController::class, 'create'])->name('dashboard.data.historial.create');
+
 });
 
 Route::get('/', function () {

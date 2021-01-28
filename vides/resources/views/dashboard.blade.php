@@ -11,7 +11,7 @@
             <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4">
     
                 <!-- Article -->
-                <article class="overflow-hidden rounded-lg shadow-lg bg-white">
+                <article class="overflow-hidden rounded-lg shadow-lg bg-white transition duration-500 ease select-none hover:bg-gray-400  focus:outline-none focus:shadow-outline">
     
                     <a href="{{ route('carga') }}">
                         <img alt="Placeholder" class="block object-cover w-full h-48" src="{{asset('img/dashboard/cargar-archivos.png')}}">
@@ -35,10 +35,10 @@
                 <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4">
         
                     <!-- Article -->
-                    <article class="overflow-hidden rounded-lg shadow-lg bg-white">
+                    <article class="overflow-hidden rounded-lg shadow-lg bg-white transition duration-500 ease select-none hover:bg-gray-400  focus:outline-none focus:shadow-outline">
         
                         <a href="{{ route('users.index') }}">
-                            <img alt="Placeholder" class="block object-cover h-48 w-full" src="{{asset('img/dashboard/users.png')}}">
+                            <img alt="Placeholder" class="block object-cover h-48 w-full " src="{{asset('img/dashboard/users.png')}}">
                         </a>
         
                         <header class="flex items-center justify-between leading-tight p-2 md:p-4">
@@ -59,7 +59,7 @@
             <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4">
     
                 <!-- Article -->
-                <article class="overflow-hidden rounded-lg shadow-lg bg-white">
+                <article class="overflow-hidden rounded-lg shadow-lg bg-white transition duration-500 ease select-none hover:bg-gray-400  focus:outline-none focus:shadow-outline">
     
                     <a href="{{ route('graficos')}}">
                         <img alt="Placeholder" class="block object-cover h-48 w-full" src="{{asset('img/dashboard/hacer-graficas.jpg')}}">
@@ -81,7 +81,7 @@
             <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4 ">
     
                 <!-- Article -->
-                <article class="overflow-hidden rounded-lg shadow-lg bg-white ">
+                <article class="overflow-hidden rounded-lg shadow-lg bg-white transition duration-500 ease select-none hover:bg-gray-400  focus:outline-none focus:shadow-outline">
     
                     <a href="{{ route('dashboard.data') }}">
                         <img alt="Placeholder" class="block object-cover h-48 w-full" src="{{asset('img/dashboard/datos.jpg')}}">

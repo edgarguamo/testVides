@@ -10,6 +10,11 @@
         class="border border-gray-800 bg-gray-800 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-gray-800 focus:outline-none focus:shadow-outline">
         <a href="/dashboard/datos">Atras</a>
     </button>
+    <button
+        type="button"
+        class="border border-gray-800 bg-gray-800 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-gray-800 focus:outline-none focus:shadow-outline">
+        <a href="{{route('dashboard.data.cliente.create')}}">Crear</a>
+    </button>
     <table id="clientes" align="center" class="table table-bordered table-striped w-4/6">
         <thead class="bg-primary text-white">
         <tr class="bg-gray-800 rounded-md">
@@ -29,7 +34,7 @@
                 <td class="px-4 py-2 items-center">{{$cliente['numClientes']}}</td>
                 <td>
                     <div class="px-4 items-center flex gap-3">
-                        <form action="/clienteFol/tablaCliente/{{ $cliente->id}}/edit" method="POST">
+                        <form action="/clienteFol/tablaCliente/{{ $cliente->id}}/edit" method="GET">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <button link type="submit" class="uppercase p-3 flex items-center bg-blue-600 text-blue-50 max-w-max shadow-sm hover:shadow-lg rounded-full w-12 h-12 ">
                                 <svg width="32" height="32"  viewBox="0 0 32 32" style="transform: rotate(360deg);"><path d="M29 27.586l-7.552-7.552a11.018 11.018 0 1 0-1.414 1.414L27.586 29zM4 13a9 9 0 1 1 9 9a9.01 9.01 0 0 1-9-9z" fill="currentColor"></path></svg>
