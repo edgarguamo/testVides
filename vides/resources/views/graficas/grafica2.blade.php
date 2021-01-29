@@ -11,10 +11,12 @@
         var datas = <?php echo json_encode($datas) ?>;
         var datos = <?php echo json_encode($datos) ?>;
         var tipoGrafica = <?php echo json_encode($tipoGrafica) ?>;
-
+        var yAxis = <?php echo json_encode($yAxis) ?>;
+        var titulo = <?php echo json_encode($titulo) ?>;
+        var meses = <?php echo json_encode($meses) ?>;
         Highcharts.chart('chart-container', {
             title:{
-                text: 'Informacion de hoteles'
+                text: titulo
             },
             tooltip: {
                 formatter: function() {
@@ -34,11 +36,11 @@
                 }
             },
             xAxis:{
-                categories:['Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
+                categories: meses
             },
             yAxis:{
                 title:{
-                    text: "Numero Y"
+                    text: yAxis
                 }
             },
             legend:{
