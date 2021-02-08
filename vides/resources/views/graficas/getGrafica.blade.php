@@ -1,15 +1,24 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Visualizar Graficas
-        </h2>
-    </x-slot>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crear Graficas</title>
+  <link rel="stylesheet" href="{{asset('css.normalize.css')}}">
+  <link rel="stylesheet" href="{{asset('css/app.css')}}">
+  <link rel="stylesheet" href="{{asset('css/style2.css')}}">
+
+</head>
 <body>
-<div class="container mx-auto my-6" >
+<div >
+<x-navbar/>
+</div>
+<div class="container mx-auto" >
     <div class="grid grid-cols-1 md:grid-cols-2">
             <div class="w-10/12 p-12 bg-white my-2 max-h-4/6 md:h-screen">
             <h2 class="text-center ">Panel de datos</h2>
-                <form method="POST" action="{{ route('crear') }}">
+                <form method="POST" action="{{ route('crear') }}" class="mt-60">
                     @csrf
                     <div class="block justify-between gap-3">
                         <label for="tipoDatos" class="block mt-2 text-xs font-semibold text-gray-600 uppercase">
@@ -126,5 +135,7 @@
 </div>
 
 </div>
+<x-footer/>
+
 </body>
-</x-app-layout>
+</html>

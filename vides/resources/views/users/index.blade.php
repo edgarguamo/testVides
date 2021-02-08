@@ -64,11 +64,10 @@
                     
                 @endforeach
             </tbody>
-            
         </table>
-        <div class="lg:w-5/6 md:w-12/12">
-            {{$users->links()}}        
-        </div>
+        <div class="lg:w-10/12 md:w-12/12 items-center">
+                {{$users->links()}}        
+            </div>
     </div>
     
         <script src="{{asset('js/style.js')}}"></script>    

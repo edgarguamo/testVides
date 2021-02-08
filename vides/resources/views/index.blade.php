@@ -137,18 +137,18 @@
           </div>
         </div>
         <div class="rounded-xl bg-gray-800 flex flex-col p-8 shadow-2xl">
-          <img src="{{asset('img/home/exampleImage2.PNG')}}" alt="imagen">
+          <img src="{{asset('img/home/exampleImage1.PNG')}}" alt="imagen">
           <div class="flex-grow text-white">
             <h2 class="text-xl title-font font-medium mb-3 text-center">Distribucion de Habitaicones</h2>
             <p class="leading-relaxed text-sm text-justify ">
-              Registro e informacion estadistica de hoteles de la provincia de loja 
+              Habitaciones disponibles en los diferentes hoteles de Loja, distribuidos según su categoría
             </p>
           </div>
         </div>
-        <div class="rounded-xl bg-gray-800 flex flex-col p-8 shadow-2xl">
+        <div class="rounded-xl bg-gray-800 flex flex-col p-8 shadow-2xl content-center items-center justify-items-center">
           <div class="flex-grow text-white">
             <h2 class="text-xl title-font font-medium mb-3 text-center">Mas informacion</h2>
-            <img class="content-center items-center text-center" src="{{asset('img/home/moreInformation.PNG')}}" alt="imagen">
+            <img class="content-center items-center justify-items-center text-center" src="{{asset('img/home/moreInformation.PNG')}}" alt="imagen">
           </div>
         </div>
       </div>

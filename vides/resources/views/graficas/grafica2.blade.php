@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="{{asset('css/app.css')}}">
 @extends('graficas.getGrafica')
 @section('grafica')
-    <div class="flex bg-gray-100">
+    <div class="flex h-96 mt-60">
         <div id="chart-container" class=""></div>
     </div>
 
